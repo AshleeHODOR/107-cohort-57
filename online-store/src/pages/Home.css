@@ -1,0 +1,12 @@
+/*Home*/
+.Home{
+    padding: 16px;
+    background-color: skyblue;
+}
+
+.Home-text{
+    color: darkcyan;
+    padding-left: 202px;
+    margin-top: -35px;
+    margin-bottom: 40px;
+}
