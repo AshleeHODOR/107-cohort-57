@@ -1,0 +1,178 @@
+/* Navbar-Pretty.css */
+
+/* --- Color Palette --- */
+:root {
+  --garnet-deep: #782F40;
+  --garnet-dark-accent: #3B121C;
+  --gold-primary: #FFD700;
+  --gold-soft: #F8E4A0;
+  --gold-pale-highlight: #FFF8DC; /* Cornsilk, for subtle highlights */
+  --text-light: #FDFBF5;
+}
+
+/* --- General Body Style (for context, can be in your main CSS) --- */
+body {
+  margin: 0; /* Resets default margin */
+  font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif; /* A clean, modern sans-serif */
+}
+
+/* --- Navbar Container --- */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.8rem 2rem; /* Slightly less vertical padding for a sleeker look */
+  background: var(--garnet-deep);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2); /* Softer shadow */
+  border-bottom: 1px solid var(--gold-soft); /* Delicate gold bottom line */
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+/* --- Navigation Brand/Logo --- */
+.nav-brand a {
+  color: var(--gold-primary);
+  text-decoration: none;
+  font-size: 1.7rem; /* Slightly more delicate */
+  /* Consider a pretty, elegant font. Ensure it's web-safe or imported. */
+  /* font-family: 'Playfair Display', 'Georgia', serif; */
+  font-family: 'Parisienne', cursive; /* Example of a script/cursive pretty font */
+  /* Fallback if 'Parisienne' isn't available */
+  /* font-family: 'Great Vibes', cursive, 'Georgia', serif; */
+  font-weight: normal; /* Script fonts often look better normal weight */
+  letter-spacing: 0.5px;
+  text-shadow: 1px 1px 1px var(--garnet-dark-accent);
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+.nav-brand a:hover {
+  color: var(--gold-pale-highlight);
+  text-shadow: 1px 1px 3px rgba(255, 248, 220, 0.6); /* Softer gold glow */
+}
+
+/* --- Navigation Links --- */
+.nav-links {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+  align-items: center; /* Vertically align items if heights differ */
+}
+
+.nav-links li {
+  margin-left: 20px; /* A bit less margin */
+}
+
+.nav-link {
+  color: var(--gold-soft);
+  text-decoration: none;
+  font-size: 1rem; /* Standard readable size */
+  padding: 8px 12px; /* Padding for hover effect area */
+  border-radius: 4px; /* Slightly rounded for softness on hover */
+  position: relative;
+  transition: color 0.35s ease, background-color 0.35s ease;
+  letter-spacing: 0.3px;
+  /* font-family: 'Lato', sans-serif; /* Or another clean, pretty font */
+}
+
+/* Pretty Hover/Active Effect for Links */
+.nav-link:hover,
+.nav-link.active {
+  color: var(--garnet-deep); /* Text color changes to garnet */
+  background-color: var(--gold-soft); /* Soft gold background on hover/active */
+}
+
+/* Optional: Add a very subtle bottom border animation */
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -1px; /* Position it just below the link, aligned with navbar border */
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--gold-primary);
+  opacity: 0;
+  transition: width 0.4s ease-out, opacity 0.4s ease-out;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+  width: 100%;
+  opacity: 1;
+}
+*/
+
+
+/* --- Call to Action Button (Optional) --- */
+.nav-cta .cta-button {
+  background: transparent;
+  color: var(--gold-soft);
+  padding: 8px 18px; /* Adjusted padding */
+  border: 1.5px solid var(--gold-soft); /* Delicate gold border */
+  border-radius: 20px; /* Pill shape for a softer, "prettier" button */
+  text-decoration: none;
+  font-weight: 600; /* Semi-bold */
+  font-size: 0.95rem;
+  transition: all 0.3s ease; /* Smooth transition for all properties */
+  margin-left: 15px; /* Space from nav links */
+}
+
+.nav-cta .cta-button:hover {
+  background-color: var(--gold-soft);
+  color: var(--garnet-deep);
+  border-color: var(--gold-soft);
+  box-shadow: 0 0 10px rgba(248, 228, 160, 0.5); /* Soft gold glow */
+  transform: translateY(-1px); /* Gentle lift */
+}
+
+/* --- Responsive Adjustments (Basic Example) --- */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    padding: 0.8rem 1rem; /* Adjust padding */
+    align-items: center;
+  }
+
+  .nav-brand {
+    margin-bottom: 0.8rem;
+    text-align: center;
+  }
+
+  .nav-links {
+    width: 100%;
+    justify-content: center; /* Center links */
+    margin-bottom: 0.5rem;
+  }
+
+  .nav-links li {
+    margin-left: 8px;
+    margin-right: 8px;
+  }
+
+  .nav-link {
+    font-size: 0.95rem; /* Slightly smaller */
+    padding: 6px 10px;
+  }
+
+  .nav-cta {
+    margin-top: 0.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .nav-brand a {
+    font-size: 1.5rem;
+  }
+  .nav-links {
+    flex-wrap: wrap; /* Allow links to wrap if too many */
+    justify-content: center;
+  }
+  .nav-links li {
+    margin: 4px; /* Adjust margin for wrapped items */
+  }
+  .nav-cta .cta-button {
+    padding: 7px 15px;
+    font-size: 0.9rem;
+  }
+}
